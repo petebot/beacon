@@ -20,32 +20,35 @@
         <h1 class="brand"><a href="index.html">Contextant</a></h1>
 
         <!-- Error Message -->
-        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+        <!-- Commented out, but if you want to use this, it's there. Bootstrap validator should take care of it though. -->
+        <!-- <div class="alert alert-danger alert-dismissible fade in" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span>
           </button>
           <strong>Oh No!</strong> You totally messed up this form and now we can't let you see the beacons! Try Again!
-        </div>
+        </div> -->
 
         <!-- Signup -->
-        <form>
-          <fieldset class="form-group has-error">
-            <label for="exampleInputEmail1">What's your name?</label>
+        <form role="form" data-toggle="validator" action="beacon.html">
+          <fieldset class="form-group">
+            <label for="InputName">What's your name?</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-user-secret"></i></div>
 
-              <input type="email" class="form-control form-control-error" id="exampleInputEmail1" placeholder="Enter your name">
+              <input type="text" data-minlength="2" data-minlength-error="That's a really short name. Maybe something longer than one character?" class="form-control form-control-feedback" id="InputName" placeholder="Enter your name" required>
             </div>
+            <small class="help-block with-errors"></small>
           </fieldset>
-          <fieldset class="form-group has-success">
-            <label for="exampleInputEmail1">And your email...</label>
+          <fieldset class="form-group">
+            <label for="InputEmail">And your email...</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-              <input type="email" class="form-control form-control-success" id="exampleInputEmail1" placeholder="example@contextant.com">
+              <input type="email" class="form-control form-control-feedback" id="InputEmail" placeholder="example@contextant.com" required>
 
             </div>
             <small class="text-muted">We'll never share your email with anyone else or spam you.</small>
+            <small class="help-block with-errors"></small>
           </fieldset>
           <div class="checkbox">
             <label>
@@ -53,7 +56,7 @@
               Oh, man! Free emails?! Yes Please!
             </label>
           </div>
-          <a role="button" class="btn btn-primary animsition-link" href="beacon.html">Get Started</a>
+          <button type="submit" role="button" class="btn btn-primary animsition-link" href="beacon.html">Get Started</button>
         </form>
       </div>
     </div>
@@ -63,6 +66,7 @@
   <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.8.2/holder.js "></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.6.0/js/jquery.animsition.min.js"></script>
+  <script src="validator.js"></script>
   <script type="text/javascript">
   $(document).ready(function() {
     $(".animsition").animsition({
