@@ -5,11 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.6.0/css/animsition.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
 </head>
-<body>
+<body class="animsition">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4 col-md-offset-4 p-a">
@@ -31,19 +33,19 @@
           <fieldset class="form-group has-error">
             <label for="exampleInputEmail1">What's your name?</label>
             <div class="input-group">
-            <div class="input-group-addon">icon</div>
+              <div class="input-group-addon"><i class="fa fa-user-secret"></i></div>
 
-            <input type="email" class="form-control form-control-error" id="exampleInputEmail1" placeholder="Enter your name">
-          </div>
+              <input type="email" class="form-control form-control-error" id="exampleInputEmail1" placeholder="Enter your name">
+            </div>
           </fieldset>
           <fieldset class="form-group has-success">
             <label for="exampleInputEmail1">And your email...</label>
             <div class="input-group">
-            <div class="input-group-addon">icon</div>
-            <input type="email" class="form-control form-control-success" id="exampleInputEmail1" placeholder="example@contextant.com">
+              <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+              <input type="email" class="form-control form-control-success" id="exampleInputEmail1" placeholder="example@contextant.com">
 
-          </div>
-          <small class="text-muted">We'll never share your email with anyone else or spam you.</small>
+            </div>
+            <small class="text-muted">We'll never share your email with anyone else or spam you.</small>
           </fieldset>
           <div class="checkbox">
             <label>
@@ -51,7 +53,7 @@
               Oh, man! Free emails?! Yes Please!
             </label>
           </div>
-          <a role="button" class="btn btn-primary" href="beacon.html">Get Started</a>
+          <a role="button" class="btn btn-primary animsition-link" href="beacon.html">Get Started</a>
         </form>
       </div>
     </div>
@@ -59,5 +61,32 @@
   <!-- jQuery first, then Bootstrap JS. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.8.2/holder.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.6.0/js/jquery.animsition.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $(".animsition").animsition({
+      inClass: 'zoom-in-lg',
+      outClass: 'fade-out-left-lg',
+      inDuration: 200,
+      outDuration: 800,
+      linkElement: '.animsition-link',
+      // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+      loading: true,
+      loadingParentElement: 'body', //animsition wrapper element
+      loadingClass: 'animsition-loading',
+      unSupportCss: [
+        'animation-duration',
+        '-webkit-animation-duration',
+        '-o-animation-duration'
+      ],
+      //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+      //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+      overlay : false,
+      overlayClass : 'animsition-overlay-slide',
+      overlayParentElement : 'body'
+    });
+  });
+  </script>
 </body>
 </html>
