@@ -1,0 +1,13 @@
+body {
+}
+.brand a {
+    background: url(assets/img/logo.svg) no-repeat;
+    width: 100%;
+    height: auto;
+    text-indent: -999em;
+    display: block;
+  }
+
+.signin .brand a {
+  margin: 3rem 0;
+}
